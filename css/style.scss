@@ -117,7 +117,14 @@ main {
 
 .service-text {
   width: 27%;
+    a {
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 18px;
+  }
 }
+
+
 
 
 
@@ -163,7 +170,7 @@ footer {
       list-style: none;
       margin: 0 30px;
       a {
-        font-size: 20px;
+        font-size: 22px;
       }
     }
   }
