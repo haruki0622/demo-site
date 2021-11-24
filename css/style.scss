@@ -29,12 +29,6 @@ h4 {
   font-weight: bold;
 }
 
-h1,h2,h3,h4,p {
-  margin: 0;
-  padding: 0;
-}
-
-
 .container {
   width: 100%;
   margin: 0 auto;
@@ -91,17 +85,29 @@ main {
   font-size: 80px;
   font-weight: bold;
   text-align: center;
+  animation-name: fadedown;
+  animation-duration: 2s;
 }
 
+
+
 .service {
-    li {
+    .service-item {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       margin: 250px 0;
+      opacity: 0;
+      transition: 3s;
+      &:nth-child(even){
+        flex-direction: row-reverse;
+      }
     }
 }
 
+.service-item.fadeIn {
+  opacity: 1;
+}
 .sec-margin {
   margin: 200px 0;
 }
@@ -125,9 +131,6 @@ main {
 }
 
 
-
-
-
 .company-detail {
   background-image: url(../image/company1.png);
   background-size:  cover;
@@ -142,6 +145,8 @@ main {
   text-align: center;
   position: relative;
   top: 30%;
+  opacity: 0;
+  transition: 3s;
   h3 {
     margin-bottom: 10px;
   }
@@ -149,16 +154,24 @@ main {
     font-size:  30px;
   }
 }
+.skill-text.fadeIn {
+  opacity: 1;
+}
 .past-work h3 {
   margin-bottom: 20px;
   text-align: center;
 }
-.slider{
+
+
+.slider1,
+.slider2{
+  margin: 80px 0;
   img {
-    width: 300px;
-    height: 300px;
+    width: 270px;
+    height: 320px;
     object-fit: cover;
     display: inline-block;
+    border-radius: 20px;
   }
 }
 footer {
@@ -166,6 +179,7 @@ footer {
   ul {
     display: flex;
     justify-content: center;
+    margin: 30px 0;
     li {
       list-style: none;
       margin: 0 30px;
@@ -176,3 +190,301 @@ footer {
   }
 
 }
+
+/*    company    */
+
+
+.company-introduction {
+  .company-text{
+    position: absolute;
+    top: 40%;
+    left: 9%;
+    color: #fff;
+  }
+  h2 {
+    font-size: 80px;
+  }
+  video {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+  }
+}
+
+/*    service    */
+
+.service-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.service-introduction {
+  margin: 200px 0;
+  .service-list {
+    width: 100%;
+    height: 500px;
+    list-style: none;
+    margin: 150px auto;
+    border-radius: 20px;
+    background-position: center;
+    background-size: cover;
+    a {
+      color: #fff;
+      font-size: 110px;
+      font-weight: 900;
+      text-align: center;
+      display: block;
+      position: relative;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      letter-spacing: 0.09em;
+      transition: all .3s;
+      &:hover {
+        opacity: 0.3;
+        transition: all .3s;
+      }
+    }
+  }
+  .web{
+    background-image: url(../image/web.png);
+  }
+  .marketing {
+    background-image: url(../image/marketing.png);
+  }
+  .app {
+    background-image: url(../image/app.png);
+  }
+}
+/*    contact    */
+.contact  {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 100px;
+  h2 {
+    font-size: 40px;
+  }
+   form{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     margin-top: 10px;
+     margin-bottom: 100px;
+     label {
+       font-size: 20px;
+       margin-top: 30px;
+       margin-bottom: 5px;
+     }
+      input {
+        width: 400px;
+        height: 30px;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        padding: 6px;
+        font-size: 16px;
+      }
+      textarea {
+        width: 400px;
+        height: 200px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid lightgray;
+        font-size: 16px;
+      }
+      .submit {
+        background-color: #F1F1F1;
+        width: 200px;
+        height: 80px;
+        margin-top: 30px;
+        font-weight: bold;
+        font-size: 22px;
+        border-radius: 20px;
+        text-align: center;
+      }
+    }
+  }
+  .sp-only {
+    display: none;
+  }
+
+  /* tb  */
+  @media screen and (max-width: 1024px) {
+    header {
+      width: 90%;
+    }
+    .slider1 img,
+    .slider2 img {
+      width: 220px;
+      height: 220px;
+    }
+    .company-introduction .company-text {
+      top: 27%;
+      left: 9%;
+    }
+    .service-introduction .service-list {
+      width: 80%;
+      height: 370px;
+      a {
+        font-size: 90px;
+      }
+    }
+  }
+
+  /*  sp  */
+@media screen and (max-width: 599px) {
+  .sp-only {
+    display: block;
+  }
+  .pc-only {
+    display: none;
+  }
+  h3 {
+    font-size: 45px;
+  }
+  h4 {
+    font-size: 30px;
+  }
+
+  header {
+    width: 93%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+     }
+     .header-title {
+       font-size: 25px;
+     }
+  .humburger-btn span {
+    display: block;
+    background-color: #000;
+    width: 40px;
+    height: 4px;
+    margin: 8px 0;
+    border-radius: 10px;
+    :hover {
+      cursor: pointer;
+    }
+  }
+  .humburge-menu {
+    position: fixed;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    text-align: center;
+    display: none;
+    li {
+      margin: 120px 0;
+    }
+    a{
+      font-size: 40px;
+      font-weight: bold;
+    }
+     &:hover {
+       cursor: pointer;
+     }
+
+  }
+  .humburge-menu.show {
+    display: block;
+  }
+  main {
+    margin: 150px 0 400px;
+    .main-title {
+      font-size: 55px;
+    }
+  }
+  .skill-text{
+    top: 37%;
+   p {
+    font-size: 18px;
+  }
+  }
+  .service-text {
+    width: 100%;
+  }
+  .service-img{
+    width: 73%;
+    margin-bottom: 15px;
+  }
+  .image {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .service-text {
+    padding: 0 50px;
+    h4 {
+      margin-bottom: 10px;
+    }
+  }
+  .slider1,
+  .slider2{
+    margin: 25px 0;
+  }
+  .slider1 img,
+  .slider2 img{
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: 0 10px;
+  }
+  footer ul {
+    margin: 30px 0;
+    li {
+      margin: 0 10px;
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+
+  /*  company  */
+  .company-introduction{
+    margin: 60px 0;
+    .company-text {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      p {
+        text-align: center;
+      }
+    }
+}
+
+
+  /* service  */
+  .service-introduction {
+    margin: 100px 0;
+    .service-list {
+      width: 80%;
+      height: 210px;
+      margin: 50px auto;
+      a {
+        font-size: 40px;
+      }
+    }
+  }
+  /*  contact  */
+  .contact {
+    width: 100%;
+    padding: 0 15px;
+    form{
+      label {
+        font-size: 16px;
+      }
+      input {
+        width: 100%;
+      }
+      textarea {
+        width: 100%;
+      }
+      .submit {
+        font-size: 20px;
+      }
+    }
+  }
+}
+

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/riset.css">
     <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/slick-theme.css">
     <title>REbuild</title>
 </head>
 <body>
@@ -14,23 +14,36 @@
         <header>
             <div class="header-logo">
                 <img class="header-img" src="image/header-img.png" alt="">
-                <a href="">
+                <a href="/">
                     <h1 class="header-title">Rebuild</h1>
                 </a>
             </div>
-            <div class="header-nav">
+            <div class="header-nav pc-only">
                 <nav>
                     <ul>
-                        <li><a href="">Company</a></li>
-                        <li><a href="">Service</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="./pages/company.html">Company</a></li>
+                        <li><a href="./pages/service.html">Service</a></li>
+                        <li><a href="./pages/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="sp-menu sp-only">
+                <div class="humburger-btn">
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav class="humburge-menu">
+                    <ul>
+                        <li><a href="./pages/company.html">Company</a></li>
+                        <li><a href="./pages/service.html">Service</a></li>
+                        <li><a href="./pages/contact.html">Contact</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         <main>
             <h2 class="main-title">Main title</h2>
-            <p class="main-title">Provide the best <span class="text-gradient">Experience</span></p>
+            <p class="main-title">Provide <br class="sp-only">the best <br class="sp-only"><span class="text-gradient">Experience</span></p>
         </main>
         <section class="company-detail">
             <div class="skill-text">
@@ -41,7 +54,7 @@
         </section>
         <section class="service sec-margin">
             <ul>
-                <li>
+                <li class="service-item">
                     <div class="service-img">
                         <img class="image" src="image/service1.png" alt="feature-service">
                     </div>
@@ -51,17 +64,17 @@
                         <a href="#">詳しく見る</a>
                     </div>
                 </li>
-                <li>
+                <li class="service-item">
+                    <div class="service-img">
+                        <img class="image" src="image/service2.png" alt="service-company">
+                    </div>
                     <div class="service-text">
                         <h4>会社の特徴</h4>
                         <p>ここに説明を入れます。ここに説明を入れます。ここに説明を入れます。ここに説明を入れます。ここに説明を入れます。ここに説明を入れます。</p>
                         <a href="#">詳しく見る</a>
                     </div>
-                    <div class="service-img">
-                        <img class="image" src="image/service2.png" alt="service-company">
-                    </div>
                 </li>
-                <li>
+                <li class="service-item">
                     <div class="service-img">
                         <img class="image" src="image/service3.png" alt="service-company">
                     </div>
@@ -75,7 +88,27 @@
         </section>
         <section class="past-work sec-margin">
             <h3>過去の実績</h3>
-            <div class="slider">
+            <div class="slider1">
+                <div>
+                    <img src="./slider/slider6.png" alt="slider-image">
+                </div>
+                <div>
+                    <img src="./slider/slider5.png" alt="slider-image">
+                </div>
+                <div>
+                    <img src="./slider/slider4.png" alt="slider-image">
+                </div>
+                <div>
+                    <img src="./slider/slider3.png" alt="slider-image">
+                </div>
+                <div>
+                    <img src="./slider/slider2.png" alt="slider-image">
+                </div>
+                <div>
+                    <img src="./slider/slider1.png" alt="slider-image">
+                </div>
+            </div>
+            <div class="slider2" dir="rtl">
                 <div>
                     <img src="./slider/slider1.png" alt="slider-image">
                 </div>
@@ -108,6 +141,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./js/slick.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/jquery.inview.min.js"></script>
 </body>
 </html>
